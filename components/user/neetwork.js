@@ -5,8 +5,8 @@ const secure=require('../auth/index')
 
 router.get('/',async(req,res)=>{
     //const users=await controller.getUsers()
-    const users=await controller.listUserBD()
-    res.status(200).send(users)
+    // const users=await controller.listUserBD()
+    res.status(200).send('test nginx')
 })
 router.get('/:id',secure.secure(),async(req,res)=>{
     const user=await controller.getUser(req.params.id)

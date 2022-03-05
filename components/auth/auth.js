@@ -1,7 +1,7 @@
 const model=require('./model.js')
 const jwt=require('jsonwebtoken')
 const bcrypt=require('bcrypt')
-const axios = require('axios');
+const store = require('./store.js');
 
 
 module.exports={
@@ -39,18 +39,10 @@ module.exports={
             return ('Ha ocurrido un error'+error)
         }
     },
-    listUsers:async()=>{
+    listUsers:()=>{
         // const response = await axios('https://localhost:3000/db');
         // const data = await response.json();
 
-        return axios.get('http://localhost:3000/db')
-            .then(function ({data}) {
-                // handle success
-                return data
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
+        return store.list()
     }
 }

@@ -16,12 +16,15 @@
     "express": "^4.17.2",
     "gulp": "^4.0.2",
     "gulp-server-livereload": "^1.9.2",
+    "ioredis": "^4.28.5",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.2.0",
     "mysql": "^2.18.1",
     "node-fetch": "^3.2.0",
     "puppeteer": "^13.1.2",
+    "redis": "^4.0.4",
+    "redis-server": "^1.2.2",
     "socket.io": "^4.4.1"
   }
 }

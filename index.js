@@ -4,22 +4,22 @@ console.time('todo')
 const http= require('http')
 const bcrypt=require('bcrypt')
 const moment=require('moment')
-const { resolve } = require('path')
-const buffer=Buffer.from('hola')
-const gulp=require('gulp')
-const server=require('gulp-server-livereload')
+// const { resolve } = require('path')
+// const buffer=Buffer.from('hola')
+// const gulp=require('gulp')
+// const server=require('gulp-server-livereload')
 const express=require('express')
 const bodyParser=require('body-parser')
 const router=require('./router')
 const db=require('./db')
 const app=express()
-const serverhttp=require('http').Server(app)
-const {socket,connect}=require('./socket.js')
-connect(serverhttp)
+// const serverhttp=require('http').Server(app)
+// const {socket,connect}=require('./socket.js')
+// connect(serverhttp)
 
-socket.io.on('connection',(socket)=>{
-  socket.emit('mensaje','Bienvenido conectado esto es websckets')
-})
+// socket.io.on('connection',(socket)=>{
+//   socket.emit('mensaje','Bienvenido conectado esto es websckets')
+// })
 
 // for(i=0;i<26;i++){
 //   buffer[i]=i+97
@@ -33,10 +33,11 @@ socket.io.on('connection',(socket)=>{
 //   res.send('Hola Mundo1')
 // })
 app.use(bodyParser.json())
-app.use('/app',express.static('www'))
+//app.use('/app',express.static('www'))
 router(app)
 // app.use(router)
-serverhttp.listen(8080)
+// serverhttp.listen(8080)
+app.listen(8080)
 
 const password='aprendiendo node'
 
@@ -73,13 +74,13 @@ function asincronaPromesa(){
   })
 }
 
-gulp.task('serve',(cb)=>{
-  gulp.src('www')
-      .pipe(server({
-        livereload:true,
-        open:true
-      }))
-})
+// gulp.task('serve',(cb)=>{
+//   gulp.src('www')
+//       .pipe(server({
+//         livereload:true,
+//         open:true
+//       }))
+// })
 
 try {
   console.time('asincrona')
